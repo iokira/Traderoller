@@ -10,5 +10,6 @@ public class VillagerRerollHandler {
         if (!VillagerUtil.isUntraded(villager)) return;
         villager.getOffers().clear();
         villager.updateTrades();
+        villager.restock(); // resets lastRestockGameTime + notifies client
     }
 }
