@@ -26,6 +26,7 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
+        lastVillagerId = -1;
         if (event.getTarget() instanceof Villager villager) {
             lastVillagerId = villager.getId();
         }
