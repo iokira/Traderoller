@@ -1,5 +1,6 @@
 package net.iokira.traderoller.network;
 
+import net.iokira.traderoller.server.ServerEventHandler;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
@@ -15,7 +16,7 @@ public class NetworkHandler {
         registrar.playToServer(
                 RerollPayload.TYPE,
                 RerollPayload.STREAM_CODEC,
-                (payload, context) -> {} // stub — wired to ServerEventHandler in Phase 5
+                ServerEventHandler::handle
         );
     }
 }
