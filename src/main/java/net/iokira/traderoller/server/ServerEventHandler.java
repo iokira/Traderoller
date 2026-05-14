@@ -16,7 +16,6 @@ public class ServerEventHandler {
 
             Entity entity = level.getEntity(payload.villagerEntityId());
             if (!(entity instanceof Villager villager)) return;
-            if (player.distanceToSqr(villager) > 16.0) return;
 
             VillagerRerollHandler.reroll(villager);
         });
